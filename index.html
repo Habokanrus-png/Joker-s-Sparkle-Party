@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Joker's Sparkle Party | Official</title>
+    <style>
+        :root {
+            --bg-dark: #120424;
+            --neon-pink: #ff007f;
+            --neon-cyan: #00f0ff;
+            --glass: rgba(255, 255, 255, 0.08);
+            --safe-top: env(safe-area-inset-top);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; font-family: 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at center, #2a0845 0%, var(--bg-dark) 100%);
+            color: #fff; min-height: 100vh; display: flex; flex-direction: column;
+            overflow-x: hidden;
+        }
+        /* Sparkle Animation */
+        .sparkle {
+            position: fixed; width: 4px; height: 4px; background: white; border-radius: 50%;
+            box-shadow: 0 0 10px #fff, 0 0 20px var(--neon-pink);
+            animation: float 4s infinite ease-in-out alternate; opacity: 0.6; z-index: 0;
+        }
+        .s1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .s2 { top: 60%; left: 80%; animation-delay: 1s; }
+        .s3 { top: 80%; left: 30%; animation-delay: 2s; }
+        @keyframes float { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(-30px) scale(1.5); } }
+        
+        nav {
+            padding-top: max(30px, var(--safe-top)); padding-bottom: 20px;
+            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
+            background: rgba(18, 4, 36, 0.6); backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,0,127,0.3);
+        }
+        nav a {
+            color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: 600;
+            padding: 10px 20px; border-radius: 25px; transition: 0.3s;
+            border: 1px solid transparent; text-transform: uppercase; letter-spacing: 1px;
+        }
+        nav a:hover, nav a.active {
+            border-color: var(--neon-cyan); background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); color: var(--neon-cyan);
+        }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; flex: 1; z-index: 1; position: relative; }
+        .hero { text-align: center; margin-bottom: 50px; animation: slideUp 1s ease-out; }
+        h1 { font-size: 3rem; margin: 10px 0; background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(255,0,127,0.5)); }
+        .card {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 40px;
+            border-radius: 24px; backdrop-filter: blur(20px); box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-left: 3px solid var(--neon-pink);
+        }
+        .dev-badge { display: inline-block; padding: 6px 15px; background: rgba(255,0,127,0.2); color: var(--neon-pink); border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--neon-pink); margin-bottom: 15px; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        footer { text-align: center; padding: 30px; opacity: 0.5; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="sparkle s1"></div><div class="sparkle s2"></div><div class="sparkle s3"></div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h1>Joker's Sparkle Party</h1>
+            <p>Bring the sparkle, join the fun.</p>
+        </div>
+        <div class="card">
+            <span class="dev-badge">Official Developer Profile</span>
+            <h2>Ruslana Habokan</h2>
+            <p>Welcome to the official portal for Joker's Sparkle Party. I am dedicated to creating vibrant, engaging, and high-quality experiences for mobile users everywhere.</p>
+            <p style="margin-top: 25px; font-family: monospace; font-size: 1.1rem; color: var(--neon-cyan);">
+                &raquo; habokanrus@icloud.com
+            </p>
+        </div>
+    </div>
+    <footer>&copy; 2026 Ruslana Habokan. All rights reserved.</footer>
+</body>
+</html>
